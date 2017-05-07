@@ -22,28 +22,28 @@ public class Blood extends ParticleTrail {
         }
     }
 
-	public Blood(ParticleInfo info) {
-		super(info);
-	}
-	
-	private static BlockData REDSTONE = new BlockData(Material.REDSTONE_BLOCK, (byte) 0);
+    public Blood(ParticleInfo info) {
+        super(info);
+    }
+    
+    private static BlockData REDSTONE = new BlockData(Material.REDSTONE_BLOCK, (byte) 0);
 
-	@Override
+    @Override
     public void doMoveEffect(Player p) {
-		Location loc = p.getLocation().add(0, 0.2, 0);
-		ParticleEffects.RED_DUST.display(0.2F, 0.1F, 0.2F, 0F, 3, loc, 256);
-	}
+        Location loc = p.getLocation().add(0, 0.2, 0);
+        ParticleEffects.RED_DUST.display(0.2F, 0.1F, 0.2F, 0F, 3, loc, 256);
+    }
 
-	@Override
+    @Override
     public void doStandEffect() {
-		double[] vals = cache[TrailListener.cycle];
+        double[] vals = cache[TrailListener.cycle];
 
-		for (Player p : users) {
-			if (p.hasMetadata("trail.standingstill")) {
-				ParticleEffects.BLOCK_DUST.display(REDSTONE, 0.08F, 0.1F, 0.08F, 0.06F, 2, p.getLocation().add(0, 1, 0), 256);
-				ParticleEffects.RED_DUST.display(0.05F, 0.05F, 0.05F, 0F, 3, p.getLocation().add(vals[0], vals[1], vals[2]), 256);
-			}
-		}
-	}
+        for (Player p : users) {
+            if (p.hasMetadata("trail.standingstill")) {
+                ParticleEffects.BLOCK_DUST.display(REDSTONE, 0.08F, 0.1F, 0.08F, 0.06F, 2, p.getLocation().add(0, 1, 0), 256);
+                ParticleEffects.RED_DUST.display(0.05F, 0.05F, 0.05F, 0F, 3, p.getLocation().add(vals[0], vals[1], vals[2]), 256);
+            }
+        }
+    }
 
 }

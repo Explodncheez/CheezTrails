@@ -27,31 +27,31 @@ public class Bloop extends ParticleTrail {
         }
     }
 
-	public Bloop(ParticleInfo info) {
-		super(info);
-	}
+    public Bloop(ParticleInfo info) {
+        super(info);
+    }
 
-	@Override
+    @Override
     public void doMoveEffect(Player p) {
-		Vector dir = p.getLocation().getDirection().multiply(-1D);
-		Vector cross = dir.setY(0).crossProduct(new Vector(0, 1, 0));
-		double d = moveCache[TrailListener.cycle % 12];
-		ParticleEffects.END_ROD.display(new Vector(0, 0.15, 0), 1F, p.getLocation().add(cross.getX() * d, 0.1, cross.getZ() * d), 256);
-	}
+        Vector dir = p.getLocation().getDirection().multiply(-1D);
+        Vector cross = dir.setY(0).crossProduct(new Vector(0, 1, 0));
+        double d = moveCache[TrailListener.cycle % 12];
+        ParticleEffects.END_ROD.display(new Vector(0, 0.15, 0), 1F, p.getLocation().add(cross.getX() * d, 0.1, cross.getZ() * d), 256);
+    }
 
-	@Override
+    @Override
     public void doStandEffect() {
-		double[][] d = standCache[TrailListener.cycle];
-		
-		for (int i = 0; i < 4; i++) {
-		    double x = d[0][i];
-		    double z = d[1][i];
-			for (Player p : users) {
-				if (p.hasMetadata("trail.standingstill")) {
-					ParticleEffects.END_ROD.display(new Vector(0, 0.15, 0), 1.5F, p.getLocation().add(x, 0.1, z), 257);
-				}
-			}
-		}
-	}
+        double[][] d = standCache[TrailListener.cycle];
+        
+        for (int i = 0; i < 4; i++) {
+            double x = d[0][i];
+            double z = d[1][i];
+            for (Player p : users) {
+                if (p.hasMetadata("trail.standingstill")) {
+                    ParticleEffects.END_ROD.display(new Vector(0, 0.15, 0), 1.5F, p.getLocation().add(x, 0.1, z), 257);
+                }
+            }
+        }
+    }
 
 }
