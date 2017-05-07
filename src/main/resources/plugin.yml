@@ -1,0 +1,11 @@
+name: CheezTrails
+main: trails.CheezTrails
+author: Explodncheez
+description: Player particle trails...
+version: 1.0
+soft-depend: [CheezUtils]
+
+commands:
+   trails:
+      aliases: [trail]
+      default: true

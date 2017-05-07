@@ -1,0 +1,394 @@
+#
+#
+## Format:
+# trails:
+#   [ID]: // DO NOT CHANGE THIS
+#     slot: '' // Make sure no two trails have the same POSITIVE slot (more than one having negative slot is alright)
+#     icon: 'MATERIAL:data'
+#     display-name: '' // You may change this
+#     permission: '' // Will default to trails.[ID] if left blank
+#     description: // Appears in description of icon
+#       - 'line1'
+#       - 'line2'
+#       - 'and so on'
+#
+
+# Particles display every <this many> ticks
+stand-trail-tick-speed: 1
+
+messages:
+  activate-effect-success: 'Activated the %TRAIL% &7effect!'
+  activate-effect-no-permission: 'You have not yet unlocked this effect!'
+  deactivate-effect-success: 'Deactivated effect.'
+  deactivate-effect-no-active: 'You do not currently have an active effect.'
+
+trails:
+  smoke:
+    slot: 0
+    icon: COAL
+    display-name: '&6&lSmoke'
+    permission: 'trails.smoke'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Leave smokey black puffs of'
+      - '&7smoke wherever you travel!'
+      - ''
+  flame:
+    slot: 1
+    icon: BLAZE_POWDER
+    display-name: '&6&lFlame'
+    permission: 'trails.flame'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Sprout flames as you idle, leave'
+      - '&7a blazing trail as you walk!'
+      - ''
+  magic:
+    slot: 2
+    icon: RED_ROSE:2
+    display-name: '&6&lMagic'
+    permission: 'trails.magic'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Mystical purple sparkles float'
+      - '&7about you as you idle, and billow'
+      - '&7behind you as you walk!'
+      - ''
+  melon:
+    slot: 3
+    icon: MELON
+    display-name: '&6&lMelon'
+    permission: 'trails.melon'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Become one with fruit, as a ring'
+      - '&7of melon magically circles you!'
+      - ''
+  dessert:
+    slot: 4
+    icon: COOKIE
+    display-name: '&6&lDessert'
+    permission: 'trails.dessert'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7You command the legions of Cake'
+      - '&7and Cookie, calling them to life'
+      - '&7to accompany your adventures!'
+      - ''
+  sugarcane:
+    slot: 5
+    icon: SUGAR_CANE
+    display-name: '&6&lSugarcane'
+    permission: 'trails.sugarcane'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Your affinity with sugary plants'
+      - '&7summons them to encircle you!'
+      - ''
+  knowledge:
+    slot: 6
+    icon: BOOK
+    display-name: '&6&lKnowledge'
+    permission: 'trails.knowledge'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7The arcane mysteries of the world'
+      - '&7now follow you with every step!'
+      - ''
+  music:
+    slot: 7
+    icon: GREEN_RECORD
+    display-name: '&6&lMusic'
+    permission: 'trails.music'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7You are now the human jukebox!'
+      - ''
+  emerald:
+    slot: 8
+    icon: EMERALD
+    display-name: '&6&lEmerald'
+    permission: 'trails.emerald'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two shimmering green rings loop'
+      - '&7around you while you idle, and'
+      - '&7oscellate behind you as you walk!'
+      - ''
+  shine:
+    slot: 9
+    icon: NETHER_STAR
+    display-name: '&6&lShine'
+    permission: 'trails.shine'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Shimmering sparkles cascade you'
+      - '&7in circles of glitter, while the'
+      - '&7ground sparkles beneath your feet!'
+      - ''
+  blood:
+    slot: 10
+    icon: REDSTONE
+    display-name: '&6&lBlood'
+    permission: 'trails.blood'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Spout a profuse stream of blood'
+      - '&7that magically begins to swirl...'
+      - ''
+  heart:
+    slot: 11
+    icon: NETHER_STALK
+    display-name: '&6&lHeart'
+    permission: 'trails.heart'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Your passionate love comes alive'
+      - '&7and begins dancing around you!'
+      - ''
+  storm:
+    slot: 12
+    icon: INK_SACK:4
+    display-name: '&6&lStorm'
+    permission: 'trails.storm'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Summon a mighty storm to drizzle'
+      - '&7endlessly over your head!'
+      - ''
+  blizzard:
+    slot: 13
+    icon: SNOW_BALL
+    display-name: '&6&lBlizzard'
+    permission: 'trails.blizzard'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Summon a wintry storm to shower'
+      - '&7your head in tiny snowflakes!'
+      - ''
+  firestorm:
+    slot: 14
+    icon: FIREBALL
+    display-name: '&6&lFirestorm'
+    permission: 'trails.firestorm'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Summon a mightly cloud of magma'
+      - '&7that drizzles molten rock over'
+      - '&7your head! Hey, it makes you hot!'
+      - ''
+  purity:
+    slot: 15
+    icon: QUARTZ
+    display-name: '&6&lPurity'
+    permission: 'trails.purity'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7You elude an aura pure as snow'
+      - '&7that bursts happily over your'
+      - '&7head in showers of sparkles!'
+      - ''
+  corruption:
+    slot: 16
+    icon: COAL:1
+    display-name: '&6&lCorruption'
+    permission: 'trails.corruption'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7You elude an aura dark as soot'
+      - '&7that bursts dramatically over'
+      - '&7your head in flaming explosions!'
+      - ''
+  oceanic:
+    slot: 18
+    icon: PRISMARINE_SHARD
+    display-name: '&6&lOceanic'
+    permission: 'trails.oceanic'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two deep, blue rings orbit you,'
+      - '&7reminding you of the seas!'
+      - ''
+  terra:
+    slot: 19
+    icon: SAPLING
+    display-name: '&6&lTerra'
+    permission: 'trails.terra'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two lush, green rings orbit you,'
+      - '&7reminding you of verdant foliage!'
+      - ''
+  golden:
+    slot: 20
+    icon: GOLD_INGOT
+    display-name: '&6&lGolden'
+    permission: 'trails.golden'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two shiny, gold rings orbit you,'
+      - '&7reminding you of jewels and riches!'
+      - ''
+  crystalline:
+    slot: 21
+    icon: INK_SACK:5
+    display-name: '&6&lCrystalline'
+    permission: 'trails.crystalline'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two sparkly, magenta rings orbit you,'
+      - '&7reminding you of shimmering gemstones!'
+      - ''
+  shadow:
+    slot: 22
+    icon: INK_SACK:8
+    display-name: '&6&lShadow'
+    permission: 'trails.shadow'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Two sooty, black rings orbit you,'
+      - '&7cloaking you in their silent shadows!'
+      - ''
+  nyan:
+    slot: 24
+    icon: CAKE
+    display-name: '&6&lNYAN'
+    permission: 'trails.nyan'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7The power of rainbow farts shall'
+      - '&7now follow you wherever you roam!'
+      - '&7NYAN NYAN NYAN NYAN NYAN'
+      - ''
+  fairy:
+    slot: 27
+    icon: PRISMARINE_CRYSTALS
+    display-name: '&6&lFairy'
+    permission: 'trails.fairy'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Adorn yourself with a pair of'
+      - '&7sparkling, pastel wings!'
+      - ''
+  angelic:
+    slot: 28
+    icon: FEATHER
+    display-name: '&6&lAngelic'
+    permission: 'trails.angelic'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Unleash your holiness to transcend'
+      - '&7into a winged figure with a halo!'
+      - ''
+  draconic:
+    slot: 29
+    icon: MAGMA_CREAM
+    display-name: '&6&lDraconic'
+    permission: 'trails.draconic'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Unchain your inner demons to sprout'
+      - '&7a menacing pair of dragon wings!'
+      - ''
+  love:
+    slot: 31
+    icon: RED_ROSE
+    display-name: '&6&lIn Love'
+    permission: 'trails.inlove'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Elude a lovely stream of hearts!'
+      - ''
+  alone:
+    slot: 32
+    icon: GHAST_TEAR
+    display-name: '&6&lForever Alone'
+    permission: 'trails.alone'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Display a gloomy mini raincloud!'
+      - ''
+  vortex:
+    slot: 33
+    icon: BLAZE_ROD
+    display-name: '&6&lFlame Vortex'
+    permission: 'trails.vortex'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Command a menacing spiral of fire'
+      - '&7to do your evil (or good) biddings!'
+      - ''
+  sparkle:
+    slot: 34
+    icon: RED_ROSE:3
+    display-name: '&6&lPixie Dust'
+    permission: 'trails.sparkle'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Shiny silver sparkles float about'
+      - '&7you as you idle, and stream behind'
+      - '&7you while you walk!'
+      - ''
+  bloop:
+    slot: 35
+    icon: END_ROD
+    display-name: '&f&lBloop'
+    permission: 'trails.bloop'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Five silver blobs forever circle you.'
+      - '&7(Seriously what are they doing?!)'
+      - ''
+  bloodyrain:
+    slot: 36
+    icon: RAW_BEEF
+    display-name: '&c&lBloody Rain'
+    permission: 'trails.bloodyrain'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7CLASH goes the thunder as liquid'
+      - '&7blood pours onto the earth below!'
+      - ''
+  thunderstorm:
+    slot: 37
+    icon: QUARTZ
+    display-name: '&9&lThunderstorm'
+    permission: 'trails.thunderstorm'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7Rain endlessly pours, sometimes'
+      - '&7accompanied by a bolt of lightning!'
+      - ''
