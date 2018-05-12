@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>random</groupId>
   <artifactId>CheezTrails</artifactId>
-  <version>1.0</version>
+  <version>1.12</version>
 	  <repositories>
 	    <!-- Spigot repo -->
 	    <repository>
@@ -14,7 +14,7 @@
        <dependency>
            <groupId>org.bukkit</groupId>
            <artifactId>spigot</artifactId>
-           <version>1.11.2</version>
+           <version>1.12.2</version>
            <type>jar</type>
            <scope>provided</scope>
        </dependency>
