@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.annotation.Nullable;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -22,6 +25,22 @@ public class TrailHandler {
     
     public static int getTrailCount(ParticleTrail trail) {
         return UsedTrails.get(trail) == null ? 0 : UsedTrails.get(trail);
+    }
+    
+    public static void setLastUsed(UUID id, @Nullable ParticleTrail trail) {
+        if (trail == null) {
+            lastUsed.remove(id);
+            return;
+        }
+        lastUsed.put(id, trail);
+    }
+    
+    public static void activateLastUsed(UUID id) {
+        ParticleTrail pt = lastUsed.get(id);
+        if (pt == null) {
+            return;
+        }
+        setActiveTrail(Bukkit.getPlayer(id), pt, false);
     }
     
     public static void loadLastUsed(FileConfiguration config) {

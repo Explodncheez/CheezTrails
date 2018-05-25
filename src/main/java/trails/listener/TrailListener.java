@@ -8,6 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
@@ -126,8 +127,20 @@ public class TrailListener implements Listener {
     }
     
     @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                if (e.getPlayer().isOnline())
+                    TrailHandler.activateLastUsed(e.getPlayer().getUniqueId());
+            }
+        }.runTaskLater(CheezTrails.getInstance(), 10L);
+    }
+    
+    @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         ParticleTrail active = TrailHandler.getActiveTrail(e.getPlayer());
+        TrailHandler.setLastUsed(e.getPlayer().getUniqueId(), active);
         TrailHandler.r(e.getPlayer());
     }
     
