@@ -2,8 +2,12 @@ package trails.listener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.bukkit.Sound;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import trails.ConfigMessages.ConfigMessage;
@@ -13,10 +17,31 @@ public class TrailHandler {
     
     public static Map<Player, ParticleTrail> ScrubPlayers = new HashMap<Player, ParticleTrail>();
     public static Map<ParticleTrail, Integer> UsedTrails = new HashMap<ParticleTrail, Integer>();
+    private static Map<UUID, ParticleTrail> lastUsed = new HashMap<>();
     public static final String PREFIX = "§9CheezTrails §1§l> §7";
     
     public static int getTrailCount(ParticleTrail trail) {
         return UsedTrails.get(trail) == null ? 0 : UsedTrails.get(trail);
+    }
+    
+    public static void loadLastUsed(FileConfiguration config) {
+        ConfigurationSection sec = config.getConfigurationSection("last-used");
+        for (String key : sec.getKeys(false)) {
+            ParticleTrail trail = ParticleTrail.get(sec.getString(key));
+            if (trail == null) {
+                continue;
+            }
+            lastUsed.put(UUID.fromString(key), trail);
+        }
+    }
+    
+    public static FileConfiguration saveLastUsed() {
+        FileConfiguration config = new YamlConfiguration();
+        ConfigurationSection sec = config.createSection("last-used");
+        for (Map.Entry<UUID, ParticleTrail> entry : lastUsed.entrySet()) {
+            sec.set(entry.getKey().toString(), entry.getValue().getName());
+        }
+        return config;
     }
     
     public static boolean setActiveTrail(Player p, ParticleTrail trail, boolean ignorePerm) {

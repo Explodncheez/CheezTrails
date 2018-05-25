@@ -1,5 +1,7 @@
 package trails;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,18 +9,20 @@ import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import trails.listener.TrailHandler;
 import trails.listener.TrailListener;
 import utilities.Utils;
 
 public class CheezTrails extends JavaPlugin {
     
     private static CheezTrails plugin;
-    private static FileConfiguration config;
+    private static FileConfiguration config, lastused;
     public static Enchantment glow;
     
     private TrailListener listener;
@@ -29,7 +33,19 @@ public class CheezTrails extends JavaPlugin {
 
         this.saveResource("config.yml", false);
         config = getConfig();
+        
         ParticleTrail.load(config);
+        // load after particle trails are loaded
+        File lastusedfile = new File("." + File.separator + "CheezTrails" + File.separator + "lastused.yml");
+        if (!lastusedfile.exists()) {
+            try {
+                lastusedfile.createNewFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        lastused = YamlConfiguration.loadConfiguration(lastusedfile);
+        TrailHandler.loadLastUsed(lastused);
         
         listener = new TrailListener(config.getInt("stand-trail-tick-speed"));
         getServer().getPluginManager().registerEvents(listener, this);

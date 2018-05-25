@@ -3,7 +3,7 @@ main: trails.CheezTrails
 author: Explodncheez
 description: Player particle trails...
 version: 1.1
-soft-depend: [CheezUtils]
+softdepend: [CheezUtils]
 
 commands:
    trails:

@@ -127,6 +127,7 @@ public class TrailListener implements Listener {
     
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
+        ParticleTrail active = TrailHandler.getActiveTrail(e.getPlayer());
         TrailHandler.r(e.getPlayer());
     }
     
