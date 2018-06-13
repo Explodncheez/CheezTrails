@@ -45,6 +45,9 @@ public class TrailHandler {
     
     public static void loadLastUsed(FileConfiguration config) {
         ConfigurationSection sec = config.getConfigurationSection("last-used");
+        if (sec == null) {
+            sec = config.createSection("last-used");
+        }
         for (String key : sec.getKeys(false)) {
             ParticleTrail trail = ParticleTrail.get(sec.getString(key));
             if (trail == null) {

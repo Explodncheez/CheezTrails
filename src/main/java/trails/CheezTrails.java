@@ -31,12 +31,12 @@ public class CheezTrails extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        this.saveResource("config.yml", false);
+        this.saveDefaultConfig();
         config = getConfig();
         
         ParticleTrail.load(config);
         // load after particle trails are loaded
-        File lastusedfile = new File("." + File.separator + "CheezTrails" + File.separator + "lastused.yml");
+        File lastusedfile = new File(this.getDataFolder() + File.separator + "lastused.yml");
         if (!lastusedfile.exists()) {
             try {
                 lastusedfile.createNewFile();
