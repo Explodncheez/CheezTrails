@@ -94,7 +94,7 @@ public class Gamebreaker extends ParticleTrail {
             	if (Math.random() < 0.02) {
             		halt.add(p);
             	} else if (Math.random() < 0.01) {
-            		randoms.put(p, utilities.Utils.get(random));
+            		randoms.put(p, get(random));
             	}
             
                 if (Math.random() < 0.01) {
@@ -117,5 +117,13 @@ public class Gamebreaker extends ParticleTrail {
             }
         }
     }
+
+	public static <T> T get(T[] array) {
+		return array[random(array.length - 1)];
+	}
+
+	public static int random(int range) {
+		return (int) (Math.random() * (range + 1));
+	}
 
 }
