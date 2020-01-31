@@ -17,8 +17,8 @@ public class Melon extends ParticleTrail {
         super(info);
     }
     
-    private static ItemData MELON = new ItemData(Material.MELON, (byte) 0);
-    private static BlockData MELON_BLOCK = new BlockData(Material.MELON_BLOCK, (byte) 0);
+    private static ItemData MELON = new ItemData(Material.MELON_SLICE, (byte) 0);
+    private static BlockData MELON_BLOCK = new BlockData(Material.MELON, (byte) 0);
 
     @Override
     public void doMoveEffect(Player p) {

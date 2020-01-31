@@ -51,7 +51,7 @@ public class CheezTrails extends JavaPlugin {
         getServer().getPluginManager().registerEvents(listener, this);
         
         boolean cheezutils = getServer().getPluginManager().getPlugin("CheezUtils") == null;
-        glow = cheezutils ? new EnchantGlow(121) : Utils.glow;
+        glow = cheezutils ? new EnchantGlow() : Utils.glow;
         
         if (!cheezutils)
             try {
@@ -99,10 +99,10 @@ public class CheezTrails extends JavaPlugin {
     public static ItemStack ConstructItemStack(Material mat, int amount, short durability, String displayName, List<String> lore) {
         ItemStack i = new ItemStack(mat, amount, durability);
         ItemMeta meta = i.getItemMeta();
-        meta.setDisplayName(displayName.replace("&", "ง"));
+        meta.setDisplayName(displayName.replace("&", "ยง"));
         List<String> newlore = new LinkedList<String>();
         for (String s : lore)
-            newlore.add(s.replace("&", "ง"));
+            newlore.add(s.replace("&", "ยง"));
         meta.setLore(newlore);
         i.setItemMeta(meta);
         return i;

@@ -27,10 +27,10 @@ public class CommandHandler implements CommandExecutor {
                             try {
                                 Player o = Bukkit.getPlayer(args[1]);
                                 TrailHandler.setActiveTrail(o, ParticleTrail.get(args[2]), true);
-                                p.sendMessage(TrailHandler.PREFIX + "Forcefully set §e" + o.getName() + "'s §fparticle effect to §e" + args[2] + "§f.");
-                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.4F, 1.2F);
+                                p.sendMessage(TrailHandler.PREFIX + "Forcefully set Â§e" + o.getName() + "'s Â§fparticle effect to Â§e" + args[2] + "Â§f.");
+                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.4F, 1.2F);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "§cInvalid syntax or Player does not exist. §f/trail set <player> <trail>");
+                                p.sendMessage(TrailHandler.PREFIX + "Â§cInvalid syntax or Player does not exist. Â§f/trail set <player> <trail>");
                             }
                             return true;
                         }
@@ -42,7 +42,7 @@ public class CommandHandler implements CommandExecutor {
                                 else
                                     MenuEditor.remove(p).restore(p);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "§cSomething went wrong with §e/trail edit§c! Please report this error!");
+                                p.sendMessage(TrailHandler.PREFIX + "Â§cSomething went wrong with Â§e/trail editÂ§c! Please report this error!");
                                 e.printStackTrace();
                             }
                             return true;
@@ -51,9 +51,9 @@ public class CommandHandler implements CommandExecutor {
                             try {
                                 ParticleTrail.save(CheezTrails.config());
                                 p.sendMessage(TrailHandler.PREFIX + "Saved menu icon positions to configuration file.");
-                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.4F, 1.2F);
+                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.4F, 1.2F);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "§cSomething went wrong with §e/trail save§c! Please report this error!");
+                                p.sendMessage(TrailHandler.PREFIX + "Â§cSomething went wrong with Â§e/trail saveÂ§c! Please report this error!");
                                 e.printStackTrace();
                             }
                             return true;
@@ -63,9 +63,9 @@ public class CommandHandler implements CommandExecutor {
                                 CheezTrails.reload();
                                 ParticleTrail.load(CheezTrails.getInstance().getConfig());
                                 p.sendMessage(TrailHandler.PREFIX + "Reloaded menu icon positions from configuration file.");
-                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.4F, 1.2F);
+                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.4F, 1.2F);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "§cSomething went wrong with §e/trail reload§c! Please report this error!");
+                                p.sendMessage(TrailHandler.PREFIX + "Â§cSomething went wrong with Â§e/trail reloadÂ§c! Please report this error!");
                                 e.printStackTrace();
                             }
                             return true;
@@ -76,10 +76,10 @@ public class CommandHandler implements CommandExecutor {
                                 
                                 int i = CheezTrails.config().getInt("stand-trail-tick-speed");
                                 TrailListener.a(i);
-                                p.sendMessage(TrailHandler.PREFIX + "Restarted particle maker with tick delay of: §e" + i + "§f.");
-                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.4F, 1.2F);
+                                p.sendMessage(TrailHandler.PREFIX + "Restarted particle maker with tick delay of: Â§e" + i + "Â§f.");
+                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.4F, 1.2F);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "§cSomething went wrong with §e/trail restart§c! Please report this error!");
+                                p.sendMessage(TrailHandler.PREFIX + "Â§cSomething went wrong with Â§e/trail restartÂ§c! Please report this error!");
                                 e.printStackTrace();
                             }
                             return true;
@@ -98,15 +98,15 @@ public class CommandHandler implements CommandExecutor {
                     }
                     
                     if (args[0].equalsIgnoreCase("list")) {
-                        sender.sendMessage("§6§lList of CheezTrails:");
+                        sender.sendMessage("Â§6Â§lList of CheezTrails:");
                         if (sender.isOp()) {
                             for (ParticleTrail trail : ParticleTrail.getAllTrails()) {
                                 if (!trail.getName().equals("deek"))
-                                    sender.sendMessage("§7• " + trail.getName());
+                                    sender.sendMessage("Â§7Â§ " + trail.getName());
                             }
                         } else {
                             for (ParticleTrail trail : ParticleTrail.getTrails().values()) {
-                                sender.sendMessage("§7• " + trail.getName());
+                                sender.sendMessage("Â§7Â§ " + trail.getName());
                             }
                         }
                         return true;
@@ -118,10 +118,10 @@ public class CommandHandler implements CommandExecutor {
                             try {
                                 Player o = Bukkit.getPlayer(args[1]);
                                 TrailHandler.removeTrail(o);
-                                p.sendMessage(TrailHandler.PREFIX + "Forcefully removed §e" + o.getName() + "'s §fparticle effect.");
-                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.4F, 1.2F);
+                                p.sendMessage(TrailHandler.PREFIX + "Forcefully removed Â§e" + o.getName() + "'s Â§fparticle effect.");
+                                p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.4F, 1.2F);
                             } catch (Exception e) {
-                                p.sendMessage(TrailHandler.PREFIX + "Did you mean: §f/trail off <player>");
+                                p.sendMessage(TrailHandler.PREFIX + "Did you mean: Â§f/trail off <player>");
                             }
                             return true;
                             
@@ -130,7 +130,7 @@ public class CommandHandler implements CommandExecutor {
                         try {
                             TrailHandler.removeTrail(p);
                         } catch (Exception e) {
-                            p.sendMessage(TrailHandler.PREFIX + "Did you mean: §f/trail off§7?");
+                            p.sendMessage(TrailHandler.PREFIX + "Did you mean: Â§f/trail offÂ§7?");
                         }
                         return true;
                         
@@ -150,18 +150,18 @@ public class CommandHandler implements CommandExecutor {
     }
     
     private static final String[] help = {
-        "§e§l==== << §6CheezTrails V1.0 §e§l>> ====",
-        "§cCommands:",
-        "§f• /trail §7Show effect menu",
-        "§f• /trail off §7Deactivate current effect",
-        "§f• /trail list §7List all effects by name",
-        "§f• /trail [name] §7Activate specified effect",
+        "Â§eÂ§l==== << Â§6CheezTrails V1.0 Â§eÂ§l>> ====",
+        "Â§cCommands:",
+        "Â§fÂ§ /trail Â§7Show effect menu",
+        "Â§fÂ§ /trail off Â§7Deactivate current effect",
+        "Â§fÂ§ /trail list Â§7List all effects by name",
+        "Â§fÂ§ /trail [name] Â§7Activate specified effect",
     }, morehelp = {
-        "§f• /trail set [name] [trail] §7Force an effect on a player even if they normally don not have the permission",
-        "§f• /trail off [name] §7Force-deactivate a player's effect",
-        "§f• /trail edit §7Open a GUI to edit the §o/trail§7 menu",
-        "§f• /trail save §7Save changes from GUI-editor menu",
-        "§f• /trail reload §7Reload values from config",
+        "Â§fÂ§ /trail set [name] [trail] Â§7Force an effect on a player even if they normally don not have the permission",
+        "Â§fÂ§ /trail off [name] Â§7Force-deactivate a player's effect",
+        "Â§fÂ§ /trail edit Â§7Open a GUI to edit the Â§o/trailÂ§7 menu",
+        "Â§fÂ§ /trail save Â§7Save changes from GUI-editor menu",
+        "Â§fÂ§ /trail reload Â§7Reload values from config",
     };
 
 }

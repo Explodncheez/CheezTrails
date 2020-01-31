@@ -19,10 +19,10 @@ import trails.listener.TrailHandler;
 public class MenuEditor {
 
     private static final ItemStack
-    empty = CheezTrails.ConstructItemStack(Material.STAINED_GLASS_PANE, 1, (short) 8, "§dClick > §fSelect This Slot", new String[] {"§7This allows you to customize the /trails menu.", "§7Select two slots to swap their positions!", "§7Click the Emerald to save the layout!"}),
-    blank = CheezTrails.ConstructItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15, "", new String[] {}),
-    save = CheezTrails.ConstructItemStack(Material.EMERALD, 1, (short) 0, "§a§lSave Layout", new String[] {"§7Saves this layout as the menu for §f/trails§7.", "§c§lNOTE: §fYou must §c/trails save§f after clicking to", "§fsave this data to the config!"}),
-    remove = CheezTrails.ConstructItemStack(Material.BARRIER, 1, (short) 0, "§c§lRemove Icon", new String[] {"§7Select an Effect Icon and click this", "§7to remove it from the menu. Unused icons", "§7are shown in your inventory and can be", "§7restored by clicking on them."});
+    empty = CheezTrails.ConstructItemStack(Material.GRAY_STAINED_GLASS_PANE, 1, (short) 8, "Â§dClick > Â§fSelect This Slot", new String[] {"Â§7This allows you to customize the /trails menu.", "Â§7Select two slots to swap their positions!", "Â§7Click the Emerald to save the layout!"}),
+    blank = CheezTrails.ConstructItemStack(Material.BLACK_STAINED_GLASS_PANE, 1, (short) 15, "", new String[] {}),
+    save = CheezTrails.ConstructItemStack(Material.EMERALD, 1, (short) 0, "Â§aÂ§lSave Layout", new String[] {"Â§7Saves this layout as the menu for Â§f/trailsÂ§7.", "Â§cÂ§lNOTE: Â§fYou must Â§c/trails saveÂ§f after clicking to", "Â§fsave this data to the config!"}),
+    remove = CheezTrails.ConstructItemStack(Material.BARRIER, 1, (short) 0, "Â§cÂ§lRemove Icon", new String[] {"Â§7Select an Effect Icon and click this", "Â§7to remove it from the menu. Unused icons", "Â§7are shown in your inventory and can be", "Â§7restored by clicking on them."});
 
     private static Map<Player, MenuEditor> Editors = new WeakHashMap<Player, MenuEditor>();
     
@@ -44,7 +44,7 @@ public class MenuEditor {
         }
         
         selected = -1;
-        inv = Bukkit.createInventory(null, 54, "[ §1Effect Menu Editor §0]");
+        inv = Bukkit.createInventory(null, 54, "[ Â§1Effect Menu Editor Â§0]");
         upper = new HashMap<Integer, ParticleTrail>(ParticleTrail.getTrails());
         lower = new HashMap<Integer, ParticleTrail>();
         
@@ -69,7 +69,7 @@ public class MenuEditor {
         inv.setItem(45, remove);
         inv.setItem(53, save);
         
-        p.sendMessage(TrailHandler.PREFIX + "§fClick two slots to swap their positions. Click the Emerald to save!");
+        p.sendMessage(TrailHandler.PREFIX + "Â§fClick two slots to swap their positions. Click the Emerald to save!");
         p.openInventory(inv);
         
         Editors.put(p, this);
@@ -88,14 +88,14 @@ public class MenuEditor {
                 if (clicked > 44) {
                     switch (e.getCurrentItem().getType()) {
                     case EMERALD:
-                        p.sendMessage(TrailHandler.PREFIX + "Saved Effect Menu layout! Remember to use §e/trails save §fto write the data to the config file!");
+                        p.sendMessage(TrailHandler.PREFIX + "Saved Effect Menu layout! Remember to use Â§e/trails save Â§fto write the data to the config file!");
                         p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.4F, 1.8F);
                         ParticleTrail.refresh(upper);
                         p.closeInventory();
                         break;
                     case BARRIER:
                         if (selected > -1 && upper.containsKey(selected)) {
-                            p.playSound(p.getLocation(), Sound.BLOCK_WOOD_BUTTON_CLICK_ON, 0.4F, 0.6F);
+                            p.playSound(p.getLocation(), Sound.BLOCK_WOODEN_BUTTON_CLICK_ON, 0.4F, 0.6F);
                             
                             ParticleTrail trail = upper.remove(selected);
                             int emptySlot = p.getInventory().firstEmpty();
@@ -143,7 +143,7 @@ public class MenuEditor {
                     } else {
                         selected = clicked;
                         e.getCurrentItem().addEnchantment(CheezTrails.glow, 1);
-                        p.playSound(p.getLocation(), Sound.BLOCK_WOOD_BUTTON_CLICK_ON, 0.4F, 0.8F);
+                        p.playSound(p.getLocation(), Sound.BLOCK_WOODEN_BUTTON_CLICK_ON, 0.4F, 0.8F);
                     }
                     
                 }
@@ -163,7 +163,7 @@ public class MenuEditor {
                         if (!upper.containsKey(i)) {
                             upper.put(i, trail);
                             e.getView().getTopInventory().setItem(i, trail.getIcon());
-                            p.playSound(p.getLocation(), Sound.BLOCK_WOOD_BUTTON_CLICK_ON, 0.4F, 1.2F);
+                            p.playSound(p.getLocation(), Sound.BLOCK_WOODEN_BUTTON_CLICK_ON, 0.4F, 1.2F);
                             break;
                         }
                     }

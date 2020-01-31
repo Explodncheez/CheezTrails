@@ -32,7 +32,7 @@ public class Thunderstorm extends ParticleTrail {
                 ParticleEffects.DRIP_WATER.display(0.38F, 0.05F, 0.38F, 1.0F, 4, loc, 257);
                 
                 if (Math.random() < 0.04) {
-                    p.getWorld().playSound(p.getLocation(), Sound.ENTITY_LIGHTNING_THUNDER, 0.4F, 1.0F);
+                    p.getWorld().playSound(p.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.4F, 1.0F);
                     
                     Location thunder = p.getLocation().add(Math.random() - 0.5, 3, Math.random() - 0.5);
                     Vector direction = Vector.getRandom();

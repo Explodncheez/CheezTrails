@@ -47,7 +47,7 @@ trails:
       - ''
   magic:
     slot: 2
-    icon: RED_ROSE:2
+    icon: ALLIUM
     display-name: '&6&lMagic'
     permission: 'trails.magic'
     description:
@@ -59,7 +59,7 @@ trails:
       - ''
   melon:
     slot: 3
-    icon: MELON
+    icon: MELON_SLICE
     display-name: '&6&lMelon'
     permission: 'trails.melon'
     description:
@@ -104,7 +104,7 @@ trails:
       - ''
   music:
     slot: 7
-    icon: GREEN_RECORD
+    icon: MUSIC_DISC_FAR
     display-name: '&6&lMusic'
     permission: 'trails.music'
     description:
@@ -149,7 +149,7 @@ trails:
       - ''
   heart:
     slot: 11
-    icon: NETHER_STALK
+    icon: NETHER_WART
     display-name: '&6&lHeart'
     permission: 'trails.heart'
     description:
@@ -160,7 +160,7 @@ trails:
       - ''
   storm:
     slot: 12
-    icon: INK_SACK:4
+    icon: LAPIS_LAZULI
     display-name: '&6&lStorm'
     permission: 'trails.storm'
     description:
@@ -171,7 +171,7 @@ trails:
       - ''
   blizzard:
     slot: 13
-    icon: SNOW_BALL
+    icon: SNOWBALL
     display-name: '&6&lBlizzard'
     permission: 'trails.blizzard'
     description:
@@ -182,7 +182,7 @@ trails:
       - ''
   firestorm:
     slot: 14
-    icon: FIREBALL
+    icon: FIRE_CHARGE
     display-name: '&6&lFirestorm'
     permission: 'trails.firestorm'
     description:
@@ -206,7 +206,7 @@ trails:
       - ''
   corruption:
     slot: 16
-    icon: COAL:1
+    icon: CHARCOAL
     display-name: '&6&lCorruption'
     permission: 'trails.corruption'
     description:
@@ -229,7 +229,7 @@ trails:
       - ''
   terra:
     slot: 19
-    icon: SAPLING
+    icon: OAK_SAPLING
     display-name: '&6&lTerra'
     permission: 'trails.terra'
     description:
@@ -251,7 +251,7 @@ trails:
       - ''
   crystalline:
     slot: 21
-    icon: INK_SACK:5
+    icon: MAGENTA_DYE
     display-name: '&6&lCrystalline'
     permission: 'trails.crystalline'
     description:
@@ -262,7 +262,7 @@ trails:
       - ''
   shadow:
     slot: 22
-    icon: INK_SACK:8
+    icon: GRAY_DYE
     display-name: '&6&lShadow'
     permission: 'trails.shadow'
     description:
@@ -318,7 +318,7 @@ trails:
       - ''
   love:
     slot: 31
-    icon: RED_ROSE
+    icon: POPPY
     display-name: '&6&lIn Love'
     permission: 'trails.inlove'
     description:
@@ -349,7 +349,7 @@ trails:
       - ''
   sparkle:
     slot: 34
-    icon: RED_ROSE:3
+    icon: AZURE_BLUET
     display-name: '&6&lPixie Dust'
     permission: 'trails.sparkle'
     description:
@@ -372,7 +372,7 @@ trails:
       - ''
   bloodyrain:
     slot: 36
-    icon: RAW_BEEF
+    icon: BEEF
     display-name: '&c&lBloody Rain'
     permission: 'trails.bloodyrain'
     description:
@@ -391,4 +391,16 @@ trails:
       - ''
       - '&7Rain endlessly pours, sometimes'
       - '&7accompanied by a bolt of lightning!'
+      - ''
+  gamebreaker:
+    slot: 44
+    icon: MAGENTA_CONCRETE
+    display-name: '&4&lTh&f&lE&4&l G&ka&4&lme&f&lBr&4&leak&ke&4&lr'
+    permission: 'trails.gamebreaker'
+    description:
+      - '&f&l[ &aActivate&e/&cDeactivate &f&l]'
+      - ''
+      - '&7You''re not sure what you did,'
+      - '&7but you managed to break it.'
+      - '&7Hope you''re proud of yourself.'
       - ''

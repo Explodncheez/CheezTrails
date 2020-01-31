@@ -77,7 +77,7 @@ public class TrailListener implements Listener {
     
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        if (e.getInventory().getName().equals("[ ง1Particle Effects ง0]")) {
+        if (e.getView().getTitle().equals("[ ยง1Particle Effects ยง0]")) {
             e.setCancelled(true);
             
             if (e.getCurrentItem() != null && e.getClickedInventory() != null && e.getCurrentItem().getType() != Material.AIR) {
@@ -95,7 +95,7 @@ public class TrailListener implements Listener {
                     p.closeInventory();
                 }
             }
-        } else if (e.getInventory().getName().equals("[ ง1Effect Menu Editor ง0]")) {
+        } else if (e.getView().getTitle().equals("[ ยง1Effect Menu Editor ยง0]")) {
             Player p = (Player) e.getWhoClicked();
             
             e.setCancelled(true);
@@ -108,7 +108,7 @@ public class TrailListener implements Listener {
     
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e) {
-        if (e.getInventory().getName().equals("[ ง1Effect Menu Editor ง0]")) {
+        if (e.getView().getTitle().equals("[ ยง1Effect Menu Editor ยง0]")) {
             final Player p = (Player) e.getPlayer();
             p.getInventory().clear();
             MenuEditor me = MenuEditor.remove(p);

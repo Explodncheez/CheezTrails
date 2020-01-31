@@ -102,7 +102,8 @@ public abstract class ParticleTrail {
         load(new BloodyRain(new ParticleInfo(config.getConfigurationSection("trails.bloodyrain"))));
         load(new Bloop(new ParticleInfo(config.getConfigurationSection("trails.bloop"))));
         load(new Thunderstorm(new ParticleInfo(config.getConfigurationSection("trails.thunderstorm"))));
-        load(new Secret(new ParticleInfo(-1, "MILK_BUCKET", "deek", "§d§lSECRET", "trails.deek", "§7LOLOLLOLKOLOLOL")));
+        load(new Secret(new ParticleInfo(-1, "MILK_BUCKET", "deek", "Â§dÂ§lSECRET", "trails.deek", "Â§7LOLOLLOLKOLOLOL")));
+        load(new Gamebreaker(new ParticleInfo(config.getConfigurationSection("trails.gamebreaker"))));
     }
     
     public static void save(FileConfiguration config) {
@@ -205,8 +206,7 @@ public abstract class ParticleTrail {
         ItemStack copy = getIcon().clone();
         
         if (!hasPermission(p)) {
-            copy.setType(Material.INK_SACK);
-            copy.setDurability((short) 8);
+            copy.setType(Material.GRAY_DYE);
         }
         
         return copy;

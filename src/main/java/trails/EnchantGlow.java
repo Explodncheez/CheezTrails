@@ -7,8 +7,8 @@ import org.bukkit.inventory.ItemStack;
 
     public class EnchantGlow extends EnchantmentWrapper {
  
-    public EnchantGlow(int id) {
-        super(id);
+    public EnchantGlow() {
+        super("cheeztrailsglow");
     }
      
     @Override

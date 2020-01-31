@@ -15,7 +15,7 @@ public class ConfigMessages {
         private String path, s;
         
         public String getMessage(String trailName) {
-            return s.replace("&", "ง").replace("%TRAIL%", trailName);
+            return s.replace("&", "ยง").replace("%TRAIL%", trailName);
         }
         
         public void loadMessage() {

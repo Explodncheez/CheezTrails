@@ -21,7 +21,7 @@ public class TrailHandler {
     public static Map<Player, ParticleTrail> ScrubPlayers = new HashMap<Player, ParticleTrail>();
     public static Map<ParticleTrail, Integer> UsedTrails = new HashMap<ParticleTrail, Integer>();
     private static Map<UUID, ParticleTrail> lastUsed = new HashMap<>();
-    public static final String PREFIX = "ง9CheezTrails ง1งl> ง7";
+    public static final String PREFIX = "ยง9Trails ยง1ยงl> ยง7";
     
     public static int getTrailCount(ParticleTrail trail) {
         return UsedTrails.get(trail) == null ? 0 : UsedTrails.get(trail);
@@ -76,7 +76,7 @@ public class TrailHandler {
             
             ScrubPlayers.put(p, trail);
             p.sendMessage(PREFIX + ConfigMessage.ACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
-            p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.8F, 1.35F);
+            p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.8F, 1.35F);
             UsedTrails.put(trail, getTrailCount(trail) + 1);
             trail.addUser(p);
             return true;
@@ -90,7 +90,7 @@ public class TrailHandler {
         ParticleTrail trail = ScrubPlayers.remove(p);
         if (trail != null) {
             p.sendMessage(PREFIX + ConfigMessage.DEACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
-            p.playSound(p.getLocation(), Sound.BLOCK_NOTE_PLING, 0.8F, 0.75F);
+            p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.8F, 0.75F);
             
             a(trail);
             trail.removeUser(p);

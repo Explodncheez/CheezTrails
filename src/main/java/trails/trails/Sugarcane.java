@@ -18,7 +18,7 @@ public class Sugarcane extends ParticleTrail {
     }
     
     private static ItemData SUGARCANE = new ItemData(Material.SUGAR_CANE, (byte) 0);
-    private static BlockData CANE_BLOCK = new BlockData(Material.SUGAR_CANE_BLOCK, (byte) 0);
+    private static BlockData CANE_BLOCK = new BlockData(Material.SUGAR_CANE, (byte) 0);
 
     @Override
     public void doMoveEffect(Player p) {

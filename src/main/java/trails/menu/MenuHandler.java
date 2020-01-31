@@ -11,7 +11,7 @@ import trails.listener.TrailHandler;
 public class MenuHandler {
     
     public static void openMenu(Player p) {
-        Inventory inv = Bukkit.createInventory(null, 45, "[ ง1Particle Effects ง0]");
+        Inventory inv = Bukkit.createInventory(null, 45, "[ ยง1Particle Effects ยง0]");
         for (ParticleTrail trail : ParticleTrail.getTrails().values()) {
             if (trail.getSlot() > -1)
                 inv.setItem(trail.getSlot(), trail.getIcon(p));
