@@ -24,6 +24,7 @@ public class CheezTrails extends JavaPlugin {
     private static CheezTrails plugin;
     private static FileConfiguration config, lastused;
     public static Enchantment glow;
+    public static String prefix = "Trails";
     
     private TrailListener listener;
     
@@ -74,6 +75,7 @@ public class CheezTrails extends JavaPlugin {
     public static void reload() {
         plugin.reloadConfig();
         config = plugin.getConfig();
+        prefix = config.getString("prefix", "Trails");
     }
     
     public static void save() {

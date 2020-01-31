@@ -16,6 +16,8 @@
 # Particles display every <this many> ticks
 stand-trail-tick-speed: 1
 
+prefix: 'Trails'
+
 messages:
   activate-effect-success: 'Activated the %TRAIL% &7effect!'
   activate-effect-no-permission: 'You have not yet unlocked this effect!'

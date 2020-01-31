@@ -69,7 +69,7 @@ public class MenuEditor {
         inv.setItem(45, remove);
         inv.setItem(53, save);
         
-        p.sendMessage(TrailHandler.PREFIX + "§fClick two slots to swap their positions. Click the Emerald to save!");
+        p.sendMessage(TrailHandler.getPrefix()+ "§fClick two slots to swap their positions. Click the Emerald to save!");
         p.openInventory(inv);
         
         Editors.put(p, this);
@@ -88,7 +88,7 @@ public class MenuEditor {
                 if (clicked > 44) {
                     switch (e.getCurrentItem().getType()) {
                     case EMERALD:
-                        p.sendMessage(TrailHandler.PREFIX + "Saved Effect Menu layout! Remember to use §e/trails save §fto write the data to the config file!");
+                        p.sendMessage(TrailHandler.getPrefix() + "Saved Effect Menu layout! Remember to use §e/trails save §fto write the data to the config file!");
                         p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.4F, 1.8F);
                         ParticleTrail.refresh(upper);
                         p.closeInventory();
@@ -104,7 +104,7 @@ public class MenuEditor {
                             lower.put(emptySlot, trail);
                             inv.setItem(selected, empty);
                         } else {
-                            p.sendMessage(TrailHandler.PREFIX + "Select an icon, then click this to remove it from the menu.");
+                            p.sendMessage(TrailHandler.getPrefix() + "Select an icon, then click this to remove it from the menu.");
                         }
                         
                         if (selected > -1)
@@ -118,7 +118,7 @@ public class MenuEditor {
                 
                     if (selected > -1) {
                         if (clicked == selected) {
-                            p.sendMessage(TrailHandler.PREFIX + "Congration! You swapped a slot with itself!");
+                            p.sendMessage(TrailHandler.getPrefix() + "Congration! You swapped a slot with itself!");
                             p.playSound(p.getLocation(), Sound.ENTITY_BAT_TAKEOFF, 0.4F, 1.6F);
                         } else {
                             ItemStack i = e.getCurrentItem().clone(), i2 = inv.getItem(selected);

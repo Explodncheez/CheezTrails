@@ -14,6 +14,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import trails.ConfigMessages.ConfigMessage;
+import trails.CheezTrails;
 import trails.ParticleTrail;
 
 public class TrailHandler {
@@ -21,7 +22,10 @@ public class TrailHandler {
     public static Map<Player, ParticleTrail> ScrubPlayers = new HashMap<Player, ParticleTrail>();
     public static Map<ParticleTrail, Integer> UsedTrails = new HashMap<ParticleTrail, Integer>();
     private static Map<UUID, ParticleTrail> lastUsed = new HashMap<>();
-    public static final String PREFIX = "§9Trails §1§l> §7";
+    
+    public static String getPrefix() {
+    	return String.format("§9%s §1§l> §7", CheezTrails.prefix);
+    }
     
     public static int getTrailCount(ParticleTrail trail) {
         return UsedTrails.get(trail) == null ? 0 : UsedTrails.get(trail);
@@ -75,13 +79,13 @@ public class TrailHandler {
             }
             
             ScrubPlayers.put(p, trail);
-            p.sendMessage(PREFIX + ConfigMessage.ACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
+            p.sendMessage(TrailHandler.getPrefix() + ConfigMessage.ACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
             p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.8F, 1.35F);
             UsedTrails.put(trail, getTrailCount(trail) + 1);
             trail.addUser(p);
             return true;
         }
-        p.sendMessage(PREFIX + ConfigMessage.ACTIVATE_EFFECT_FAIL.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
+        p.sendMessage(TrailHandler.getPrefix()+ ConfigMessage.ACTIVATE_EFFECT_FAIL.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
         p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, 0.8F, 1.25F);
         return false;
     }
@@ -89,14 +93,14 @@ public class TrailHandler {
     public static boolean removeTrail(Player p) {
         ParticleTrail trail = ScrubPlayers.remove(p);
         if (trail != null) {
-            p.sendMessage(PREFIX + ConfigMessage.DEACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
+            p.sendMessage(TrailHandler.getPrefix() + ConfigMessage.DEACTIVATE_EFFECT_SUCCESS.getMessage(trail.getIcon().getItemMeta().getDisplayName()));
             p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 0.8F, 0.75F);
             
             a(trail);
             trail.removeUser(p);
             return true;
         }
-        p.sendMessage(PREFIX + ConfigMessage.DEACTIVATE_EFFECT_FAIL.getMessage("%TRAIL%"));
+        p.sendMessage(TrailHandler.getPrefix() + ConfigMessage.DEACTIVATE_EFFECT_FAIL.getMessage("%TRAIL%"));
         p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_ATTACK_IRON_DOOR, 0.8F, 1.25F);
         return false;
     }
